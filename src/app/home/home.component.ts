@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
 import { appPath } from '../app-path.const';
-import { products } from './../models/products';
+
 import { PRODUCT_TYPES } from './../models/product-types';
+import { IProduct } from '../models/product-interface';
+import { ProductService } from '../services/product.service';
 
 @Component({
   selector: 'app-home',
@@ -17,12 +19,19 @@ export class HomeComponent implements OnInit {
   /** 產品類別 */
   productTypes = PRODUCT_TYPES.slice(1, 4);
 
+  /** 產品清單 */
+  products: IProduct[];
 
-  products = products;
-
-  constructor() { }
+  constructor(private productService: ProductService) { }
 
   ngOnInit() {
+    this.productService
+      .getProducts()
+      .subscribe(
+        data => {
+          this.products = data.slice(0, 3);
+        }
+      );
   }
 
 }
