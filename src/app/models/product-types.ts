@@ -1,4 +1,4 @@
-export const ProductTypes = [
+export const PRODUCT_TYPES = [
   {
     title: '所有甜點',
     type: 'all'

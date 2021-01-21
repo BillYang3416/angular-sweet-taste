@@ -1,4 +1,4 @@
-export const menus = [
+export const MENUS = [
   {
     title: '首頁',
     path: '',

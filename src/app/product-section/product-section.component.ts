@@ -1,6 +1,5 @@
-import { ProductTypes } from './../models/product-types';
+import { PRODUCT_TYPES } from './../models/product-types';
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-product-section',
@@ -9,8 +8,8 @@ import { Router } from '@angular/router';
 })
 export class ProductSectionComponent implements OnInit {
 
-  productTypes = ProductTypes;
-
+  /** 產品類別 */
+  productTypes = PRODUCT_TYPES;
 
   constructor() { }
 
