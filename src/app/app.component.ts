@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 
-import { appPath } from './app-path.const';
 
 @Component({
   selector: 'app-root',
@@ -9,6 +8,4 @@ import { appPath } from './app-path.const';
 })
 export class AppComponent {
 
-  /** 路由定義 */
-  path = appPath;
 }
