@@ -1,1 +1,66 @@
-<p>product-section works!</p>
+<!-- 表頭圖片開始 -->
+<div class="container mb-3">
+  <div class="header">
+    <div class="header-main-image bg-cover"
+         style="background-image: url(https://images.unsplash.com/photo-1512484457149-266d165a4eca?ixlib=rb-0.3.5&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;s=786581a33fd6c9343735655439ce2e5a&amp;auto=format&amp;fit=crop&amp;w=1380&amp;q=80)">
+      <img src="../assets/images/lg-想吃甜點是不需要理由的.svg"
+           width="89"
+           class="header-image-context"
+           alt="">
+    </div>
+  </div>
+</div>
+<!-- 表頭圖片結束 -->
+
+
+<section class="container mt-5">
+  <div class="row">
+    <!-- 左側產品類別開始 -->
+    <div class="col-md-4 mb-5">
+      <h2 class="bg-primary text-white text-center h4 py-3 mb-0">甜點類別</h2>
+      <div class="list-group text-center">
+
+        <a *ngFor="let productType of productTypes"
+           [routerLink]="productType.type"
+           routerLinkActive="active"
+           class="list-group-item list-group-item-action h4">{{productType.title}}</a>
+
+      </div>
+    </div>
+    <!-- 左側產品類別結束 -->
+
+    <!-- 右側產品清單開始 -->
+    <router-outlet></router-outlet>
+    <!-- 右側產品清單結束 -->
+
+  </div>
+  <!-- 換頁區域開始 -->
+  <nav aria-label="Page nav"
+       class="d-flex justify-content-center">
+    <ul class="pagination">
+      <li class="page-item">
+        <a class="page-link"
+           href="#"
+           aria-label="Previous">
+          <span aria-hidden="true">&laquo;</span>
+          <span class="sr-only">Previous</span>
+        </a>
+      </li>
+      <li class="page-item"><a class="page-link"
+           href="#">1</a></li>
+      <li class="page-item"><a class="page-link"
+           href="#">2</a></li>
+      <li class="page-item"><a class="page-link"
+           href="#">3</a></li>
+      <li class="page-item">
+        <a class="page-link"
+           href="#"
+           aria-label="Next">
+          <span aria-hidden="true">&raquo;</span>
+          <span class="sr-only">Next</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <!-- 換頁區域結束 -->
+</section>

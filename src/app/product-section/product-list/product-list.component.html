@@ -1,1 +1,9 @@
-<p>product-list works!</p>
+<div class="col-md-8">
+  <div class="row mb-5">
+    <div class="col-md-6 mb-5" *ngFor="let item of products">
+      <!-- 產品展示區域開始 -->
+      <app-product-item [item]="item"></app-product-item>
+      <!-- 產品展示區域結束 -->
+    </div>
+  </div>
+</div>
