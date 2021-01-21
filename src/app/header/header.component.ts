@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { appPath } from '../app-path.const';
+import { menus } from './../models/menus';
 
 @Component({
   selector: 'app-header',
@@ -9,8 +9,10 @@ import { appPath } from '../app-path.const';
 })
 export class HeaderComponent implements OnInit {
 
-  /** 路由定義 */
-  path = appPath;
+  /** 選單 */
+  menus = menus;
+
+  homePath = menus[0].path;
 
   constructor() { }
 

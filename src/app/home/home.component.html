@@ -1,3 +1,4 @@
+<!-- 表頭區域開始 -->
 <div class="header">
   <div class="header-main-image bg-cover"
        style="background-image: url(https://images.unsplash.com/photo-1473256599800-b48c7c88cd7e?ixlib=rb-0.3.5&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;s=ae0d68ab0db4ee79bdce92722b31112b&amp;auto=format&amp;fit=crop&amp;w=925&amp;q=80)">
@@ -5,36 +6,24 @@
   <div class="row no-gutters justify-content-center rectangle-section">
     <div class="col-md-10">
       <div class="row no-gutters">
-        <a [routerLink]="path.products"
-           class="col-4 rectangle-image-wrap active">
-          <span class="rectangle-text">本日精選</span>
-          <div class="four-sides rectangle-over zindex--1"></div>
-          <div class="rectangle-image bg-cover"
-               style="background-image: url(https://images.unsplash.com/photo-1504473089979-b1c4993a9653?ixlib=rb-0.3.5&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;s=9db69b72e1f7d1b4e5c81cee531108ff&amp;auto=format&amp;fit=crop&amp;w=634&amp;q=80)">
-          </div>
-        </a>
-        <a [routerLink]="path.products"
+
+        <a *ngFor="let productType of productTypes"
+           [routerLink]="[path.products,productType.type]"
            class="col-4 rectangle-image-wrap">
-          <span class="rectangle-text">人氣推薦</span>
-          <div class="four-sides rectangle-over zindex--1"></div>
-          <div class="rectangle-image bg-cover"
-               style="background-image: url(https://images.unsplash.com/photo-1525059337994-6f2a1311b4d4?ixlib=rb-0.3.5&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;s=7ce5bbf66bdb4ed3b6965f0b3618aa43&amp;auto=format&amp;fit=crop&amp;w=654&amp;q=80)">
-          </div>
-        </a>
-        <a [routerLink]="path.products"
-           class="col-4 rectangle-image-wrap">
-          <span class="rectangle-text">新品上市</span>
+          <span class="rectangle-text">{{productType.title}}</span>
           <div class="four-sides rectangle-over zindex--1"></div>
           <div class="rectangle-image bg-cover"
                style="background-image: url(https://images.unsplash.com/photo-1490914327627-9fe8d52f4d90?ixlib=rb-0.3.5&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;s=73ed228f25bdefd2291c242f6d390fca&amp;auto=format&amp;fit=crop&amp;w=634&amp;q=80)">
           </div>
         </a>
+
       </div>
     </div>
   </div>
 </div>
+<!-- 表頭區域結束 -->
 
-
+<!-- 為甚麼選擇甜點開始 -->
 <section class="section my-md-9">
   <div class="row justify-content-center no-gutters d-md-none">
     <div class="col-6">
@@ -68,7 +57,9 @@
     </div>
   </div>
 </section>
+<!-- 為甚麼選擇甜點結束 -->
 
+<!-- 為甚麼一定要吃甜點開始 -->
 <section class="section my-md-9">
   <div class="row d-md-none justify-content-center">
     <div class="col-6">
@@ -102,7 +93,9 @@
 
   </div>
 </section>
+<!-- 為甚麼一定要吃甜點結束 -->
 
+<!-- 不需要理由開始 -->
 <section class="my-md-9"
          style="text-align: center;">
   <img src="../assets/images/lg-想吃甜點是不需要理由的.svg"
@@ -110,62 +103,15 @@
        style="width: 89.1px;"
        alt="">
 </section>
+<!-- 不需要理由結束 -->
 
+<!-- 產品區域開始 -->
 <section class="container my-5 my-md-7">
   <div class="row">
-    <div class="col-md-4">
-      <div class="card mb-5">
-        <div class="card-img-top"
-             style="height: 315px; background-image: url(https://images.unsplash.com/photo-1534073737927-85f1ebff1f5d?ixlib=rb-0.3.5&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;s=1204e5551548223af82981f0025984ef&amp;auto=format&amp;fit=crop&amp;w=634&amp;q=80);">
-          <div class="item-tag">
-            <strong>本日精選</strong>
-          </div>
-        </div>
-        <div class="card-body">
-          <h5 class="card-title">焦糖瑪卡隆</h5>
-          <p class="card-text"><strong class="d-flex justify-content-end">NT $450</strong></p>
-        </div>
-        <a [routerLink]="path.cart"
-           class="h4 mb-0 btn-primary-lighter card-footer d-flex justify-content-center">
-          加入購物車
-        </a>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="card mb-5">
-        <div class="card-img-top"
-             style="height: 315px; background-image: url(https://images.unsplash.com/photo-1525059337994-6f2a1311b4d4?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=7ce5bbf66bdb4ed3b6965f0b3618aa43&auto=format&fit=crop&w=654&q=80);">
-          <div class="item-tag">
-            <strong>本日精選</strong>
-          </div>
-        </div>
-        <div class="card-body">
-          <h5 class="card-title">牛奶尬圈</h5>
-          <p class="card-text"><strong class="d-flex justify-content-end">NT $450</strong></p>
-        </div>
-        <a [routerLink]="path.cart"
-           class="h4 mb-0 btn-primary-lighter card-footer d-flex justify-content-center">
-          加入購物車
-        </a>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="card">
-        <div class="card-img-top"
-             style="height: 315px; background-image: url(https://images.unsplash.com/photo-1490474504059-bf2db5ab2348?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=0cad6d3de8adbdf6298d4ca5d094f8c6&auto=format&fit=crop&w=1350&q=80);">
-          <div class="item-tag">
-            <strong>本日精選</strong>
-          </div>
-        </div>
-        <div class="card-body">
-          <h5 class="card-title">奇異果奶</h5>
-          <p class="card-text"><strong class="d-flex justify-content-end">NT $450</strong></p>
-        </div>
-        <a [routerLink]="path.cart"
-           class="h4 mb-0 btn-primary-lighter card-footer d-flex justify-content-center">
-          加入購物車
-        </a>
-      </div>
+    <div class="col-md-4"
+         *ngFor="let item of products">
+      <app-product-item [item]="item"></app-product-item>
     </div>
   </div>
 </section>
+<!-- 產品區域結束 -->
