@@ -29,8 +29,11 @@
            id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto">
 
-          <li *ngFor="let menu of menus">
-            <a [routerLink]="menu.path">{{menu.title}}</a>
+          <li *ngFor="let menu of menus"
+              class="nav-item">
+            <a [routerLink]="menu.path"
+               routerLinkActive="active"
+               class="nav-link">{{menu.title}}</a>
           </li>
 
         </ul>
