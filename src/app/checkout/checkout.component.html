@@ -1,11 +1,15 @@
 <section class="container my-lg-5">
   <div class="row">
+
     <!-- 表單區域開始 -->
-    <router-outlet></router-outlet>
+    <div class="col-lg-8">
+      <router-outlet></router-outlet>
+    </div>
     <!-- 表單區域結束 -->
 
     <!-- 側邊欄位開始 -->
     <div class="col-lg-4 d-none d-lg-block text-primary-light">
+
       <!-- 訂單摘要開始 -->
       <app-order-info [isMsg]="false"
                       [subTotal]="subTotal"></app-order-info>
