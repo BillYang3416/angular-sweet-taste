@@ -5,7 +5,7 @@ export const MENUS = [
   },
   {
     title: '甜點',
-    path: 'products/all',
+    path: 'products',
   },
   {
     title: '登入',
