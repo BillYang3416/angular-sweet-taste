@@ -9,7 +9,8 @@
     <h5 class="card-title">{{item.name}}</h5>
     <p class="card-text"><strong class="d-flex justify-content-end">{{item.price | currency:'TWD'}}</strong></p>
   </div>
-  <button class="h4 mb-0 btn-primary-lighter card-footer d-flex justify-content-center">
+  <button (click)="addToCart(item)"
+          class="h4 mb-0 btn-primary-lighter card-footer d-flex justify-content-center">
     加入購物車
   </button>
 </div>
