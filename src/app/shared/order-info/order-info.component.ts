@@ -7,6 +7,9 @@ import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 })
 export class OrderInfoComponent implements OnChanges {
 
+
+  @Input() isMsg = true;
+
   /** 小計 */
   @Input() subTotal: number;
 

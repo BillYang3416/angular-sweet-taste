@@ -1,0 +1,12 @@
+<div class="d-flex mt-3">
+  <div class="cart-image cart-image-sm mr-3"
+       style="background-image: url(https://images.unsplash.com/photo-1497052254059-f3e0bf1a5133?ixlib=rb-0.3.5&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;s=ce7267675921fc7e41b5610f49750a40&amp;auto=format&amp;fit=crop&amp;w=685&amp;q=80)">
+  </div>
+  <div class="d-flex align-items-center">
+    <div class="flex-fill mr-lg-4 text-primary-light">
+      <span class="h5">{{ item.name }}</span>
+      <span class="h5"> ({{ item.amount }}) </span><br>
+      <span>{{ item.price | currency: 'TWD' }}</span>
+    </div>
+  </div>
+</div>
