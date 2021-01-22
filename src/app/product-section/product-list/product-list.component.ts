@@ -24,10 +24,10 @@ export class ProductListComponent implements OnInit {
       .pipe(
         switchMap((params: ParamMap) => {
           const type = params.get('type');
-          if ('all' === type) {
-            return this.productService.getProducts();
-          } else {
+          if (type) {
             return this.productService.getProductsByType(type);
+          } else {
+            return this.productService.getProducts();
           }
         })
       )

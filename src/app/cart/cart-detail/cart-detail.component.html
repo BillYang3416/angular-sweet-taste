@@ -1,0 +1,48 @@
+<div class="cart-row d-flex flex-column flex-md-row py-3">
+  <div class="d-flex align-items-center flex-grow-1 mr-md-3">
+    <!-- 圖片顯示開始 -->
+    <div class="my-4 mr-4 flex-grow-1 flex-md-grow-0">
+      <div class="cart-image"
+           style="background-image: url(https://images.unsplash.com/photo-1497052254059-f3e0bf1a5133?ixlib=rb-0.3.5&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;s=ce7267675921fc7e41b5610f49750a40&amp;auto=format&amp;fit=crop&amp;w=685&amp;q=80)">
+      </div>
+    </div>
+    <!-- 圖片顯示結束 -->
+
+    <!-- 產品明細開始 -->
+    <div class="d-flex align-items-md-center flex-column flex-md-row flex-md-grow-1">
+      <div class="flex-fill mr-md-4">
+        <span class="h5">{{ detail.name }}</span><br>
+        <span>{{ detail.price | currency:'TWD' }}</span>
+      </div>
+      <div class="ml-md-auto mt-3 mt-md-0"
+           style="width: 145px;">
+        <div class="input-group carts-input-group">
+          <div class="input-group-prepend">
+            <button type="button"
+                    (click)="removeAmount()"
+                    class="btn btn-brand-light text-primary-light material-icons text-base-size">remove</button>
+          </div>
+          <input type="text"
+                 class="form-control"
+                 [(ngModel)]="amount"
+                 (ngModelChange)="onAmountChange()"
+                 [ngModelOptions]="{updateOn:'blur'}">
+          <div class="input-group-append">
+            <button type="button"
+                    (click)="addAmount()"
+                    class="btn btn-brand-light text-primary-light material-icons text-base-size">add</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 產品明細結束 -->
+
+    <!-- 產品總數開始  -->
+    <div class="price ml-md-auto align-items-center py-3 justify-content-end d-flex flex-md-row-reverse">
+      <button (click)="deleteCartDetail()"
+              class="btn d-none d-md-block"><span class="material-icons">delete_outline</span></button>
+      <span class="h5 mb-0 mr-md-3">{{ detail.totalPrice | currency:'TWD' }}</span>
+    </div>
+    <!-- 產品總數結束 -->
+  </div>
+</div>

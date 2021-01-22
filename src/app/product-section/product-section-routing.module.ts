@@ -10,6 +10,10 @@ const routes: Routes = [
     component: ProductSectionComponent,
     children: [
       {
+        path: '',
+        component: ProductListComponent,
+      },
+      {
         path: ':type',
         component: ProductListComponent,
       }

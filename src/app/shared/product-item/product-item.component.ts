@@ -1,3 +1,4 @@
+import { CartService } from './../../services/cart.service';
 import { Component, Input, OnInit } from '@angular/core';
 
 import { appPath } from 'src/app/app-path.const';
@@ -10,9 +11,6 @@ import { IProduct } from 'src/app/models/product-interface';
 })
 export class ProductItemComponent implements OnInit {
 
-  /** 路由定義 */
-  path = appPath;
-
   /** 產品 */
   @Input() item: IProduct;
 
@@ -23,9 +21,15 @@ export class ProductItemComponent implements OnInit {
     popular: '人氣推薦'
   };
 
-  constructor() { }
+  constructor(private cartService: CartService) { }
 
   ngOnInit() {
+  }
+
+  /** 加入購物車 */
+  addToCart(item: IProduct) {
+    alert(`${item.name} 已被加入購物車`);
+    this.cartService.addItemToCart(item);
   }
 
 }
